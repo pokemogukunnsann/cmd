@@ -5,6 +5,8 @@ import os
 app = Flask(__name__)
 DOWNLOAD_DIR = "downloads"
 
+@app.route("/favicon.ico")
+
 @app.route("/download/<filename>")
 def download(filename):
     return send_from_directory(DOWNLOAD_DIR, filename, as_attachment=True)
