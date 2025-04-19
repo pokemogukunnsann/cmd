@@ -5,7 +5,10 @@ import os
 app = Flask(__name__)
 DOWNLOAD_DIR = "downloads"
 
-@app.route("/favicon.ico")
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('static', 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
 
 @app.route("/download/<filename>")
 def download(filename):
