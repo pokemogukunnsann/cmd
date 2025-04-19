@@ -9,6 +9,8 @@ GITHUB_TOKEN = "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"
 REPO_URL = "https://github.com/pokemogukunnsann/cmdsennyoufile.git"
 REPO_DIR = "/tmp/cmdrepo"
 
+#これらの認証トークンは仮です．使えません
+
 @app.route("/push", methods=["POST"])
 def push_file():
     filename = request.args.get("filename", "test.txt")
