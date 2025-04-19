@@ -1,8 +1,13 @@
 # unrestricted_api.py
-from flask import Flask, request
-import subprocess
+from flask import Flask, send_from_directory
+import os
 
 app = Flask(__name__)
+DOWNLOAD_DIR = "downloads"
+
+@app.route("/download/<filename>")
+def download(filename):
+    return send_from_directory(DOWNLOAD_DIR, filename, as_attachment=True)
 
 @app.route("/")
 def run():
